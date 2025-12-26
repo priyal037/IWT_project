@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="Styles1.css">
+
+</head>
+<body>
+
+<h1 > Edu Quiz Portal </h1>
+
+<div class="content">
+    <div id="box">
+
+        <form onsubmit="return loginUser()">
+
+            <input type="text" id="user" placeholder="Username or email" required><br><br>
+
+            <input type="password" id="pass" placeholder="Password" required><br><br>
+
+            <button type="submit" class="box-link">Login</button>
+
+        </form>
+
+    </div>
+</div>
+
+<script>
+function loginUser() {
+    // 
+    let correctUser = "admin";
+    let correctPass = "12345";
+
+    let user = document.getElementById("user").value;
+    let pass = document.getElementById("pass").value;
+
+    if (user === correctUser && pass === correctPass) {
+        
+        window.location.href = "myportal.html";
+        return false;
+    } else {
+        alert("❌ Incorrect Username or Password!");
+        return false; 
+    }
+}
+</script>
+
+</body>
+</html>
