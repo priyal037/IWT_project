@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hadoop & Big Data Quiz</title>
+    <style>
+        body{
+            font-family: lucida;
+            background:  rgb(100, 158, 199);
+            padding: 20px;
+        }
+        .box{
+            background: white;
+            padding: 20px;
+            width: 650px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        h2{text-align: center;}
+        button{
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 8px;
+            border: none;
+            background: black;
+            color: white;
+            cursor: pointer;
+        }
+        #result{
+            margin-top: 20px;
+            padding: 15px;
+            background: #d9ffd9;
+            border-left: 5px solid green;
+            display: none;
+        }
+        .correct{
+            background: #4be355;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .wrong{
+            background: #ea4848;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        #timer{
+            font-size: 22px;
+            font-weight: bold;
+            color: red;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+ 
+<h2>Data Analytic (DA) Quiz</h2>
+<div id="timer">Time Left: 10m 0s</div>
+
+<form id="quizForm">
+
+<p>1. Big Data is commonly described by?</p>
+<label><input type="radio" name="q1" value="C"> 5 V's</label><br>
+<label><input type="radio" name="q1" value="A"> 2 V's</label><br><br>
+
+<p>2. Hadoop uses which file system?</p>
+<label><input type="radio" name="q2" value="A"> HDFS</label><br>
+<label><input type="radio" name="q2" value="B"> NTFS</label><br><br>
+
+<p>3. MapReduce has how many phases?</p>
+<label><input type="radio" name="q3" value="A"> 2</label><br>
+<label><input type="radio" name="q3" value="B"> 5</label><br><br>
+
+<p>4. Map function generates?</p>
+<label><input type="radio" name="q4" value="A"> Key-Value pairs</label><br>
+<label><input type="radio" name="q4" value="B"> Tables</label><br><br>
+
+<p>5. YARN stands for?</p>
+<label><input type="radio" name="q5" value="A"> Yet Another Resource Negotiator</label><br>
+<label><input type="radio" name="q5" value="B"> Yearly Allocation Resource Node</label><br><br>
+
+<p>6. Pig Latin is a?</p>
+<label><input type="radio" name="q6" value="A"> High-level data flow language</label><br>
+<label><input type="radio" name="q6" value="B"> Hardware device</label><br><br>
+
+<p>7. ANOVA compares?</p>
+<label><input type="radio" name="q7" value="A"> More than two means</label><br>
+<label><input type="radio" name="q7" value="B"> Medians only</label><br><br>
+
+<p>8. HDFS stores data using?</p>
+<label><input type="radio" name="q8" value="A"> Replication</label><br>
+<label><input type="radio" name="q8" value="B"> Mirroring</label><br><br>
+
+<p>9. Which is NOT a Hadoop component?</p>
+<label><input type="radio" name="q9" value="A"> MS Word</label><br>
+<label><input type="radio" name="q9" value="B"> HDFS</label><br><br>
+
+<p>10. Pig runs on top of?</p>
+<label><input type="radio" name="q10" value="A"> Hadoop</label><br>
+<label><input type="radio" name="q10" value="B"> Excel</label><br><br>
+
+<p>11. Shuffle & Sort occurs between?</p>
+<label><input type="radio" name="q11" value="A"> Map and Reduce</label><br>
+<label><input type="radio" name="q11" value="B"> Before Map</label><br><br>
+
+<p>12. ANOVA full form?</p>
+<label><input type="radio" name="q12" value="A"> Analysis of Variance</label><br>
+<label><input type="radio" name="q12" value="B"> Advanced Normal Variation</label><br><br>
+
+<p>13. HDFS has?</p>
+<label><input type="radio" name="q13" value="A"> NameNode & DataNode</label><br>
+<label><input type="radio" name="q13" value="B"> RAM & ROM</label><br><br>
+
+<p>14. Reduce function outputs?</p>
+<label><input type="radio" name="q14" value="A"> Aggregated key-value</label><br>
+<label><input type="radio" name="q14" value="B"> Random values</label><br><br>
+
+<p>15. Big Data Velocity means?</p>
+<label><input type="radio" name="q15" value="A"> Speed of data generation</label><br>
+<label><input type="radio" name="q15" value="B"> Data quality</label><br><br>
+
+<p>16. Pig Latin is similar to?</p>
+<label><input type="radio" name="q16" value="A"> SQL</label><br>
+<label><input type="radio" name="q16" value="B"> Python</label><br><br>
+
+<p>17. MapReduce is written in?</p>
+<label><input type="radio" name="q17" value="A"> Java</label><br>
+<label><input type="radio" name="q17" value="B"> PHP</label><br><br>
+
+<p>18. Which is a Big Data tool?</p>
+<label><input type="radio" name="q18" value="A"> Hadoop</label><br>
+<label><input type="radio" name="q18" value="B"> Paint</label><br><br>
+
+<p>19. Pig execution engine?</p>
+<label><input type="radio" name="q19" value="A"> MapReduce</label><br>
+<label><input type="radio" name="q19" value="B"> Oracle</label><br><br>
+
+<p>20. ANOVA tests?</p>
+<label><input type="radio" name="q20" value="A"> Whether group means differ</label><br>
+<label><input type="radio" name="q20" value="B"> Whether graphs differ</label><br><br>
+
+<button type="button" onclick="checkScore()">Submit</button>
+</form>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+let timeLeft = 600;
+
+let timer = setInterval(function(){
+    let minutes = Math.floor(timeLeft / 60);
+    let seconds = timeLeft % 60;
+
+    document.getElementById("timer").innerHTML =
+        "Time Left: " + minutes + "m " + seconds + "s";
+
+    timeLeft--;
+
+    if(timeLeft < 0){
+        clearInterval(timer);
+        checkScore();
+    }
+}, 1000);
+
+
+// CHECK SCORE FUNCTION
+function checkScore() {
+
+    clearInterval(timer);
+
+    let answers = {
+        q1:"C", q2:"A", q3:"A", q4:"A", q5:"A",
+        q6:"A", q7:"A", q8:"A", q9:"A", q10:"A",
+        q11:"A", q12:"A", q13:"A", q14:"A", q15:"A",
+        q16:"A", q17:"A", q18:"A", q19:"A", q20:"A"
+    };
+
+    let score = 0;
+
+    for(let q in answers){
+
+        let correct = answers[q];
+        let options = document.getElementsByName(q);
+
+        options.forEach(option => {
+            let label = option.parentElement;
+
+            // mark correct
+            if(option.value === correct){
+                label.classList.add("correct");
+            }
+
+            // mark wrong
+            if(option.checked){
+                if(option.value === correct){
+                    score++;
+                } else {
+                    label.classList.add("wrong");
+                }
+            }
+        });
+    }
+
+    let resultBox = document.getElementById("result");
+    resultBox.style.display = "block";
+    resultBox.innerHTML =
+        "<b>Your response has been submitted.</b><br><br>" +
+        "Your Score: <b>" + score + " / 20</b>";
+}
+</script>
+
+</body>
+</html>

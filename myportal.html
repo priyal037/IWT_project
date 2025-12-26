@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portal</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: #f2f2f2;
+        }
+
+        .header {
+            background: #007bff;
+            padding: 15px;
+            color: white;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .menu {
+            width: 200px;
+            background: white;
+            height: 100vh;
+            float: left;
+            border-right: 2px solid #ccc;
+        }
+
+        .menu a {
+            display: block;
+            padding: 15px;
+            font-size: 18px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .menu a:hover {
+            background: #007bff;
+            color: white;
+        }
+
+        .content {
+            margin-left: 200px;
+            padding: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">📘 Edu Quiz Portal</div>
+
+    <!-- SIDE MENU -->
+    <div class="menu">
+        
+        <a href="#" onclick="openQuiz('dbms.html')">Database Mangement System Quiz</a>
+        <a href="#" onclick="openQuiz('da.html')">Data Analytics  Quiz</a>
+        <a href="#" onclick="openQuiz('toc.html')">Theaory of Computation Quiz</a>
+        <a href="#" onclick="openQuiz('iwt.html')">Internet & Web Technology Quiz</a>
+        <a href="#" onclick="openQuiz('os.html')">Operating Sytstem  Quiz</a>
+        <a href="#" onclick="openQuiz('oops.html')">Object-Oriented Programming Quiz</a>
+
+
+
+
+
+
+    </div>
+
+    <!-- CONTENT AREA -->
+    <div class="content">
+        <h2>Select any Quiz from the left menu</h2>
+        <iframe id="quizFrame"></iframe>
+    </div>
+
+<script>
+    function openQuiz(page) {
+        document.getElementById("quizFrame").src = page;
+    }
+</script>
+
+</body>
+</html>
